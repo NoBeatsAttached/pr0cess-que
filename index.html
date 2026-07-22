@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#030303" />
-<title>PR0CESS_LIVE // BEAT BATTLE</title>
+<meta name="theme-color" content="#040609" />
+<title>PR0CESS // QUEUE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
@@ -197,245 +197,13 @@ body.overlay{background:transparent}
 
 .ovl .now.closednow{color:var(--hot);
   text-shadow:-3px 0 rgba(63,198,255,.7),3px 0 rgba(255,46,95,.9),0 2px 18px rgba(0,0,0,.9)}
-/* ---- beat battle: old-tool bracket structure, PRISM skin ---- */
-.wrap.wide{max-width:1200px}
-:root{--line2:#254058;--gold:#FFD34D;--win-bg:rgba(63,198,255,.12)}
-.statuspill.live2{color:var(--electric);border-color:#14506b;text-shadow:0 0 8px rgba(63,198,255,.5)}
-.statuspill.live2::before{content:"\25CF "}
-.statuspill.gold{color:var(--gold);border-color:#6b5514;text-shadow:0 0 8px rgba(255,211,77,.5)}
-.statuspill.gold::before{content:"\265B "}
-.goldtxt{color:var(--gold)}
-.btn.slim{width:auto;padding:11px 18px;margin-top:0}
-code{background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:2px 8px;color:var(--electric);font-size:13px}
-.cmdref{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:11px 13px;font-size:12px;color:var(--dim);margin-bottom:16px;line-height:1.8}
-.cmdref b{color:var(--text)}
-.goldstrip{border-color:#6b5514;background:#1d1607}
-.goldstrip .num{background:var(--gold);color:var(--void)}
 
-/* ===== bracket (ported from the weekly tool) ===== */
-.bscroll{overflow-x:auto;padding:20px 4px}
-.bracket{display:flex;align-items:stretch;width:max-content}
-.rcol{display:flex;flex-direction:column}
-.rtitle{font-family:'Code','JetBrains Mono',monospace;font-size:13px;letter-spacing:3px;
-  color:var(--electric);text-transform:uppercase;text-align:center;margin-bottom:16px;
-  padding:0 8px;white-space:nowrap;position:relative}
-.rtitle::after{content:"";display:block;width:24px;height:2px;background:var(--prism);margin:6px auto 0}
-.rmatches{display:flex;flex-direction:column;flex:1}
-.mwrap{display:flex;align-items:center;flex:1}
-.match{width:186px;flex-shrink:0;margin:5px 0 5px 10px;border:1px solid var(--line2);
-  border-radius:0;overflow:hidden;background:rgba(10,17,27,.9)}
-.match.champ-match{border-color:var(--gold);box-shadow:0 0 0 1px rgba(255,211,77,.35)}
-.match.next{border-color:var(--electric);animation:nextpulse 1.5s ease-in-out infinite}
-@keyframes nextpulse{0%,100%{box-shadow:0 0 0 1px var(--electric)}50%{box-shadow:0 0 0 1px var(--electric),0 0 14px var(--win-bg)}}
-.match[data-arm]{cursor:pointer}
-.match[data-arm]:hover{border-color:var(--electric)}
-.m-head{display:flex;align-items:center;justify-content:space-between;padding:3px 8px;
-  border-bottom:1px solid var(--line);background:rgba(0,0,0,.25);min-height:20px}
-.m-num{font-size:9px;letter-spacing:1px;color:var(--dim)}
-.m-next-tag{font-size:8px;letter-spacing:1px;color:var(--electric);font-weight:700}
-.m-next-tag.livec{color:var(--hot)}
-.slot{padding:10px 12px;font-size:12px;display:flex;align-items:center;gap:8px;
-  white-space:nowrap;overflow:hidden;position:relative}
-.slot:first-child{border-bottom:1px solid var(--line)}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--line2);flex-shrink:0}
-.slot.win{background:var(--win-bg);color:var(--text);font-weight:500}
-.slot.win::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--electric)}
-.slot.win .dot{background:var(--electric)}
-.slot.lose{color:var(--dimmer)}
-.slot.empty{color:var(--dimmer);font-style:italic;font-size:11px}
-.slot.bye{color:var(--dimmer)}
-.slot.chs .sname{color:var(--gold)}
-.sname{overflow:hidden;text-overflow:ellipsis;flex:1}
-.bv{font-size:10px;color:var(--dim);flex-shrink:0}
-.bye-tag{font-size:9px;letter-spacing:1px;color:var(--dim);background:var(--void);
-  padding:2px 6px;border-radius:2px;flex-shrink:0;border:1px solid var(--line2)}
-.bye-tag.cb{color:var(--gold);border-color:rgba(255,211,77,.4)}
-
-/* champion column */
-.champ-col{display:flex;align-items:center;justify-content:center;padding:0 14px 0 10px;min-width:170px}
-.champ-card{border:1px solid var(--gold);border-radius:0;padding:22px 18px;text-align:center;width:158px;
-  background:rgba(10,17,27,.9);box-shadow:0 0 0 1px rgba(255,211,77,.3);position:relative}
-.clabel{font-size:9px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
-.ctrophy{font-size:30px;margin-bottom:10px;color:var(--gold)}
-.cname{font-family:'Code','JetBrains Mono',monospace;font-size:22px;letter-spacing:1px;color:var(--gold);
-  line-height:1.1;word-break:break-word;min-height:26px;text-transform:uppercase;
-  text-shadow:-1.5px 0 rgba(255,46,95,.4),1.5px 0 rgba(63,198,255,.4)}
-
-/* ===== spotlight fight card (board) ===== */
-.fstage{display:flex;align-items:stretch;gap:0;width:100%;margin-bottom:14px}
-.fside{flex:1;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line2);
-  padding:26px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;position:relative}
-.fside.won{border-color:var(--gold)}
-.fside.won .fname{color:var(--gold)}
-.fcorner{font-size:10px;letter-spacing:3px;color:var(--dim);border:1px solid var(--line2);
-  padding:3px 10px;text-transform:uppercase}
-.fside.champ-side .fcorner{color:var(--gold);border-color:var(--gold)}
-.fname{font-family:'Code','JetBrains Mono',monospace;font-size:clamp(22px,4vw,40px);letter-spacing:1px;
-  color:var(--text);text-transform:uppercase;text-align:center;line-height:1;word-break:break-word;
-  text-shadow:-2px 0 rgba(255,46,95,.55),2px 0 rgba(63,198,255,.55)}
-.fside.champ-side .fname{color:var(--gold)}
-.ftrack{font-size:11px;color:var(--electric);text-decoration:none;letter-spacing:2px;text-transform:uppercase}
-.fvotes{font-size:40px;font-weight:800;color:var(--electric);line-height:1;
-  text-shadow:-2px 0 rgba(255,46,95,.5),2px 0 rgba(63,198,255,.5)}
-.frow{display:flex;justify-content:center;gap:8px}
-.vb{border:1px solid var(--line2);border-radius:0;width:44px;height:38px;font-size:18px;color:var(--text)}
-.vb:hover{border-color:var(--electric);color:var(--electric)}
-.wb{border:1px solid #6b5514;border-radius:0;padding:0 14px;height:38px;font-size:11px;
-  letter-spacing:2px;color:var(--gold);font-weight:700}
-.wb:hover{background:#1d1607}
-.fvs{display:flex;align-items:center;justify-content:center;padding:0 16px;
-  font-family:'Code','JetBrains Mono',monospace;font-size:clamp(20px,3vw,34px);color:var(--hot);letter-spacing:2px}
-
-/* champion banner (done state) */
-.champbox{border:1px solid var(--gold);background:rgba(10,17,27,.9);border-radius:0;padding:26px;
-  text-align:center;margin-bottom:16px;box-shadow:0 0 0 1px rgba(255,211,77,.3),0 0 30px rgba(255,211,77,.12)}
-.champbox .lab{font-size:11px;letter-spacing:4px;color:var(--gold);text-transform:uppercase}
-.champbox .bigname{font-family:'Code','JetBrains Mono',monospace;font-size:34px;font-weight:800;color:var(--gold);
-  margin-top:8px;text-transform:uppercase;
-  text-shadow:-2px 0 rgba(255,46,95,.5),2px 0 rgba(63,198,255,.5)}
-.champbox .sub{font-size:12px;color:var(--dim);margin-top:8px}
-.confirm.goldc{border-color:#6b5514;background:#1d1607;box-shadow:0 0 26px rgba(255,211,77,.15)}
-.confirm.goldc .big{color:var(--gold)}
-
-/* ===== overlay spotlight ===== */
-.oround{font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--electric);
-  text-shadow:0 0 14px rgba(63,198,255,.7)}
-.ostage{display:flex;align-items:center;gap:0;margin-top:14px}
-.ofighter{display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 8px}
-.ofighter.won .oname{color:var(--gold)}
-.oname{font-family:'Code','JetBrains Mono',monospace;font-weight:800;font-size:clamp(28px,4.5vw,52px);
-  color:#fff;text-transform:uppercase;line-height:1;
-  text-shadow:-3px 0 rgba(255,46,95,.9),3px 0 rgba(63,198,255,.9),0 2px 18px rgba(0,0,0,.9)}
-.ofighter.champ-side .oname{color:var(--gold)}
-.otally{font-size:26px;font-weight:800;color:var(--electric);text-shadow:0 2px 12px rgba(0,0,0,.9)}
-.ovs2{font-family:'Code','JetBrains Mono',monospace;font-size:clamp(20px,3vw,36px);color:var(--hot);
-  padding:0 20px;text-shadow:0 2px 12px rgba(0,0,0,.9)}
-.goldbig{font-family:'Code','JetBrains Mono',monospace;color:var(--gold);text-transform:uppercase;
-  text-shadow:0 0 20px rgba(255,211,77,.6),0 2px 18px rgba(0,0,0,.9)}
-
-/* ---- masthead readability ---- */
-.brand{font-size:18px;letter-spacing:.08em;
-  text-shadow:-1px 0 rgba(255,46,95,.35),1px 0 rgba(63,198,255,.35)}
-.brand small{font-size:10.5px;letter-spacing:.2em;color:#8FA3BA;margin-top:5px;text-shadow:none}
-.brand small .z{color:var(--electric)}
-.osub{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#CFE4F7;margin-top:6px;
-  text-shadow:0 2px 10px rgba(0,0,0,.9)}
-
-/* ---- upload window timer ---- */
-.tbanner{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;background:var(--panel);
-  border:1px solid var(--electric);border-radius:0;padding:14px 16px;margin-bottom:16px;
-  box-shadow:0 0 18px rgba(63,198,255,.15)}
-.tlab{font-size:11px;letter-spacing:.28em;color:var(--electric);text-transform:uppercase}
-.tbanner .tval{font-family:'Code','JetBrains Mono',monospace;font-size:34px;font-weight:800;color:var(--text);
-  text-shadow:-1.5px 0 rgba(255,46,95,.45),1.5px 0 rgba(63,198,255,.45)}
-.tsub{font-size:11px;color:var(--dim)}
-.twrap.tlow .tval{color:var(--hot);text-shadow:0 0 14px rgba(255,46,95,.5)}
-.twrap.tdone .tval{color:var(--hot)}
-.twrap.tdone .tlab,.twrap.tdone .tsub{color:var(--hot)}
-.tmini{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--electric);
-  border:1px solid var(--line2);padding:8px 11px}
-.tmini .tval{font-weight:700}
-.otimer{font-size:clamp(48px,8vw,90px)!important}
-
-/* ---- dedicated overlays + timer groups ---- */
-.ovlcenter{display:flex;flex-direction:column;align-items:center;justify-content:center;
-  min-height:96vh;text-align:center;padding:2vh 2vw}
-.ostage.vscenter{justify-content:center;align-items:center}
-.tgrp{display:inline-flex;align-items:center;gap:4px;font-size:10px;letter-spacing:.14em;
-  color:var(--dim);border:1px solid var(--line);padding:4px 8px;margin-right:2px}
-
-/* ---- slot machine ---- */
-.slotbox{display:flex;flex-direction:column;align-items:center;gap:18px;padding:24px 0 8px}
-.slotwin{position:relative;width:300px;height:64px;overflow:hidden;border:1px solid var(--line2);
-  border-radius:0;background:rgba(0,0,0,.55);box-shadow:inset 0 0 30px rgba(0,0,0,.8)}
-.slotreel{display:flex;flex-direction:column;will-change:transform}
-.slotcell{height:64px;display:flex;align-items:center;justify-content:center;text-align:center;
-  font-family:'Code','JetBrains Mono',monospace;font-size:18px;letter-spacing:.02em;color:var(--text);
-  padding:0 12px;line-height:1.1}
-.slotline{position:absolute;left:0;right:0;top:50%;height:64px;transform:translateY(-50%);
-  border-top:1px solid rgba(63,198,255,.5);border-bottom:1px solid rgba(63,198,255,.5);pointer-events:none}
-.slotwin::before,.slotwin::after{content:"";position:absolute;left:0;right:0;height:20px;z-index:2;pointer-events:none}
-.slotwin::before{top:0;background:linear-gradient(180deg,rgba(0,0,0,.9),transparent)}
-.slotwin::after{bottom:0;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent)}
-.slotspin{width:auto;padding:12px 40px;font-size:15px;letter-spacing:.2em}
-.slotspin:disabled{opacity:.5}
-.slotout{min-height:34px;text-align:center}
-.slotwon{font-family:'Code','JetBrains Mono',monospace;font-size:24px;color:#FFD34D;letter-spacing:.02em;
-  text-shadow:-2px 0 rgba(255,46,95,.5),2px 0 rgba(63,198,255,.5)}
-
-/* prize editor */
-.slotedit{margin-top:26px;border-top:1px solid var(--line);padding-top:18px}
-.prizerack{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
-.prizerow{display:flex;align-items:center;gap:6px}
-.prizerow .pnum{width:22px;text-align:center;color:var(--dim);font-size:12px;flex-shrink:0}
-.prizerow .pin-name{flex:1;padding:8px 10px;font-size:13px;background:var(--panel);
-  border:1px solid var(--line2);color:var(--text)}
-.prizeadd{display:flex;gap:6px;margin-bottom:14px}
-.prizeadd input{flex:1;padding:8px 10px;font-size:13px;background:var(--panel);
-  border:1px solid var(--line2);color:var(--text)}
-
-.brand,.gate .g-brand,.confirm .big{font-family:'Code','JetBrains Mono',ui-monospace,monospace;}
-/* =========================================================
-   COLD MODE — terminal base, color reserved for music moments
-   (override layer: loaded last, wins the cascade, JS untouched)
-   ========================================================= */
-:root{
-  --void:#030303; --panel:#0A0A0A; --panel-2:#101010;
-  --line:#1E1E1E; --line2:#2B2B2B;
-  --text:#EDEDED; --dim:#8C8C8C; --dimmer:#4A4A4A;
-  --electric:#3FC6FF;            /* phosphor green: the working accent */
-  --electric-soft:#08222E;
-  --music:#3FC6FF;               /* cyan: reserved for the music moments */
+/* ---- brand font: display moments only ---- */
+.brand, .gate .g-brand,
+.confirm .big, .confirm .pos,
+.ovl .lab, .ovl .now{
+  font-family:'Code','JetBrains Mono',ui-monospace,monospace;
 }
-/* heavier scanlines — the refs are scanline-forward */
-body::after{background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.24) 2px 3px)}
-body.overlay::after{background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.12) 2px 3px)}
-
-/* masthead: white, wide-tracked like the logo, no chroma smear */
-.brand{font-size:15px;letter-spacing:.22em;color:#FFF;text-shadow:none}
-.brand .z{color:var(--electric)}
-.brand small{font-size:10px;letter-spacing:.3em;color:#7A7A7A}
-.mast::after{background:linear-gradient(90deg,var(--electric),transparent 70%);opacity:.5;height:1px}
-
-/* infra accents → phosphor */
-.statuspill.open{color:var(--electric);border-color:#14506B;text-shadow:0 0 8px rgba(63,198,255,.45)}
-.statuspill.live2{color:var(--electric);border-color:#14506B;text-shadow:0 0 8px rgba(63,198,255,.45)}
-input:focus,textarea:focus{border-color:var(--electric);box-shadow:0 0 0 1px var(--electric),0 0 12px rgba(63,198,255,.2)}
-.chip.on{color:var(--electric);border-color:#14506B;background:var(--electric-soft);box-shadow:none}
-.modenav a.on{background:var(--electric);border-color:var(--electric);color:#000;box-shadow:0 0 12px rgba(63,198,255,.3)}
-.btn{background:var(--electric);color:#000;box-shadow:0 0 14px rgba(63,198,255,.25)}
-.miniact:hover{color:var(--text);border-color:var(--dim)}
-.seclabel .ct{color:var(--electric)}
-.tmini{color:var(--electric)}
-.tgrp{border-color:var(--line2)}
-.cmdref code, code{color:var(--electric)}
-
-/* bracket: cold cards, green win-state, green pulse */
-.rtitle{color:var(--electric)}
-.rtitle::after{background:var(--electric);opacity:.7}
-.match.next{animation:coldpulse 1.5s ease-in-out infinite}
-@keyframes coldpulse{0%,100%{box-shadow:0 0 0 1px var(--electric)}50%{box-shadow:0 0 0 1px var(--electric),0 0 12px rgba(63,198,255,.25)}}
-.m-next-tag{color:var(--electric)}
-.slot.win{background:rgba(63,198,255,.08)}
-.slot.win::before{background:var(--electric)}
-.slot.win .dot{background:var(--electric)}
-.strip .meta a,.strip .meta .tag{color:var(--electric)}
-.ftrack{color:var(--electric)}
-
-/* timers: terminal green countdown (stage dressing = cold) */
-.tbanner{border-color:#14506B;box-shadow:0 0 14px rgba(63,198,255,.12)}
-.tlab{color:var(--electric)}
-.tbanner .tval{color:#FFF;text-shadow:0 0 10px rgba(63,198,255,.35)}
-.oround{color:var(--electric);text-shadow:0 0 12px rgba(63,198,255,.55)}
-.otimer{color:#FFF!important;text-shadow:0 0 18px rgba(63,198,255,.5),0 2px 14px rgba(0,0,0,.9)!important}
-
-/* ===== MUSIC MOMENTS: color stays loud ===== */
-.fvotes{color:var(--music);text-shadow:-2px 0 rgba(255,46,95,.5),2px 0 rgba(63,198,255,.5)}
-.otally{color:var(--music)}
-/* fighter names keep the full chromatic split (already explicit rgba) */
-/* VS stays hot red, champion stays gold, meters keep the prism (already defined) */
-.confirm{border-color:#14506B;background:var(--electric-soft);box-shadow:0 0 18px rgba(63,198,255,.12)}
-.confirm .big,.confirm .pos{color:var(--electric);text-shadow:-1.5px 0 rgba(255,46,95,.5),1.5px 0 rgba(63,198,255,.5)}
 
 </style>
 </head>
@@ -443,646 +211,273 @@ input:focus,textarea:focus{border-color:var(--electric);box-shadow:0 0 0 1px var
 <div id="app"></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-/* G's & VIP's BEAT BATTLE — same Supabase, same PINs as the queue. */
+window.PQ_CONFIG = {
+  SUPABASE_URL:      "https://tewcgwhumtmjvfxcvbxl.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_1DZr_3nrtELGlEFIR3SIMA_F_ELXSdn",
+
+  BRAND:      "PR0CESS",
+  BRAND_TAIL: "QUEUE",
+  BRAND_SUB:  "PR0CESS_LIVE // FEEDBACK STREAMS",
+  GENRES: ["Tearout","Midtempo","Experimental","Hybrid Trap","Riddim","Other"]
+};
+
+</script>
+<script>
+/* PR0CESS // QUEUE — Supabase edition. Edit config.js, not this file. */
 (function(){
 "use strict";
-var SUPABASE_URL="https://tewcgwhumtmjvfxcvbxl.supabase.co";
-var SUPABASE_ANON_KEY="sb_publishable_1DZr_3nrtELGlEFIR3SIMA_F_ELXSdn";
-var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+var CFG = window.PQ_CONFIG || {};
+var BRAND=CFG.BRAND||"PR0CESS", BRAND_TAIL=CFG.BRAND_TAIL||"QUEUE", BRAND_SUB=CFG.BRAND_SUB||"";
+var GENRES=CFG.GENRES||["Other"];
+var CONFIGURED = CFG.SUPABASE_URL && CFG.SUPABASE_URL.indexOf("PASTE")!==0 && window.supabase;
+var sb = CONFIGURED ? window.supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY) : null;
 
 var app=document.getElementById("app");
 function esc(s){return (s||"").replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-function route(){return location.hash.replace("#","").split("?")[0]||"enter";}
+function route(){return location.hash.replace("#","").split("?")[0]||"submit";}
+function wordmark(){ return BRAND.replace("0",'<span class="z">0</span>')+' <span class="z">//</span> '+BRAND_TAIL; }
 
-/* ---------- state ---------- */
-var B={state:'entries',champ_code:null,champ_name:null,active_match:null};
-var LINKS={};
-var ENT=[], M=[];
-var listeners=[];
+/* ---------------- state ---------------- */
+var State={open:true,items:[]};
+var listeners=[]; var pollT=null;
 function onState(fn){listeners.push(fn);fn();}
 function emit(){listeners.forEach(function(fn){fn();});}
-function byId(id){ for(var i=0;i<ENT.length;i++) if(ENT[i].id===id) return ENT[i]; return null; }
-function nameOf(id){ var e=byId(id); return e?e.handle:"—"; }
-function champEntrant(){ for(var i=0;i<ENT.length;i++) if(ENT[i].is_champ) return ENT[i]; return null; }
+function current(){return State.items.filter(function(i){return i.status==="reviewing";})[0]||null;}
+function queued(){return State.items.filter(function(i){return i.status==="queued";}).sort(function(a,b){return a.sort_key-b.sort_key;});}
+function reviewed(){return State.items.filter(function(i){return i.status==="done"||i.status==="skipped";});}
 
 function refresh(){
+  if(!sb) return Promise.resolve();
   return Promise.all([
-    sb.from("bb_battle").select("*").eq("id",1).single(),
-    sb.from("bb_entrants").select("id,handle,is_champ,created_at").order("created_at"),
-    sb.from("bb_matches").select("*").order("id")
-  ]).then(function(r){
-    if(!r[0].error&&r[0].data) B=r[0].data;
-    if(!r[1].error) ENT=r[1].data||[];
-    if(!r[2].error) M=r[2].data||[];
+    sb.from("queue").select("*"),
+    sb.from("session").select("open").eq("id",1).single()
+  ]).then(function(res){
+    if(!res[0].error) State.items=res[0].data||[];
+    if(!res[1].error && res[1].data) State.open=!!res[1].data.open;
     emit();
-    if(PIN) loadLinks();
   });
 }
-function loadLinks(){
-  sb.rpc("bb_links",{p_pin:PIN}).then(function(r){
-    if(!r.error&&r.data){
-      var map={}; r.data.forEach(function(x){map[x.id]=x.link;});
-      LINKS=map; emit();
-    }
-  });
-}
-function linkOf(id){ return LINKS[id]||null; }
-
-/* ---------- countdown ---------- */
-function fmtLeft(ms){
-  if(ms<=0) return "00:00";
-  var s=Math.floor(ms/1000), h=Math.floor(s/3600), m=Math.floor((s%3600)/60), x=s%60;
-  function p(n){return (n<10?"0":"")+n;}
-  return (h>0?h+":":"")+p(m)+":"+p(x);
-}
-function deadlineSet(){ return !!B.deadline; }
-function timerLabel(){ return B.timer_label==='cook' ? 'COOK UP' : 'UPLOAD WINDOW'; }
-function uploadExpired(){
-  return deadlineSet() && B.timer_label!=='cook' && new Date(B.deadline).getTime() <= Date.now();
-}
-var _expFired=null;
-setInterval(function(){
-  if(!B.deadline){ _expFired=null; return; }
-  var left=new Date(B.deadline).getTime()-Date.now();
-  if(left<=0 && _expFired!==B.deadline){ _expFired=B.deadline; emit(); }
-  document.querySelectorAll(".tval").forEach(function(el){ el.textContent=fmtLeft(left); });
-  document.querySelectorAll(".twrap").forEach(function(el){
-    el.classList.toggle("tdone", left<=0);
-    el.classList.toggle("tlow", left>0&&left<=60000);
-  });
-},500);
 function startLive(){
+  if(!sb) return;
   refresh();
   try{
-    sb.channel("bb")
-      .on("postgres_changes",{event:"*",schema:"public",table:"bb_battle"},refresh)
-      .on("postgres_changes",{event:"*",schema:"public",table:"bb_matches"},refresh)
+    sb.channel("pq")
+      .on("postgres_changes",{event:"*",schema:"public",table:"queue"},refresh)
+      .on("postgres_changes",{event:"*",schema:"public",table:"session"},refresh)
       .subscribe();
   }catch(e){}
-  setInterval(refresh, 7000);
+  clearInterval(pollT); pollT=setInterval(refresh, 7000); // safety net if realtime hiccups
 }
 
-/* ---------- pins / roles (shared with the queue) ---------- */
-var PIN=localStorage.getItem("pq_pin")||"", ROLE=localStorage.getItem("pq_role")||"";
-function isOwner(){return ROLE==="owner";}
+/* ---------------- admin (PIN) ---------------- */
+var PIN = localStorage.getItem("pq_pin")||"";
+var ROLE = localStorage.getItem("pq_role")||"";
 function getRole(pin){ return sb.rpc("pq_role",{p_pin:pin}).then(function(r){return r.error?null:r.data;}); }
-function admin(cmd,extra){
-  var args={p_pin:PIN,p_cmd:cmd,p_id:null,p_uuid:null,p_side:null,p_delta:null,p_matches:null,p_text:null};
-  for(var k in (extra||{})) args[k]=extra[k];
-  return sb.rpc("bb_admin",args).then(function(r){
+function isOwner(){ return ROLE==="owner"; }
+function admin(cmd,id){
+  return sb.rpc("pq_admin",{p_pin:PIN,p_cmd:cmd,p_id:id||null}).then(function(r){
     if(r.error){
-      if(/bad pin/i.test(r.error.message)){PIN="";ROLE="";localStorage.removeItem("pq_pin");localStorage.removeItem("pq_role");render();}
-      else if(/not allowed/i.test(r.error.message)) alert("That action is host-only.");
-      else alert("Failed: "+r.error.message);
+      if(/bad pin/i.test(r.error.message)){ PIN=""; ROLE=""; localStorage.removeItem("pq_pin"); localStorage.removeItem("pq_role"); render(); }
+      else if(/not allowed/i.test(r.error.message)){ alert("That action is crew-only."); }
+      else alert("Action failed: "+r.error.message);
     }
     return refresh();
   });
 }
 
-/* ---------- seeding (the proven no-double-skip algorithm) ---------- */
-function pow2(n){var p=1;while(p<n)p*=2;return Math.max(p,2);}
-function seedPositions(size){var a=[1];while(a.length<size){var n=a.length*2,out=[];a.forEach(function(s){out.push(s,n+1-s);});a=out;}return a;}
-function buildBracket(){
-  var champ=champEntrant();
-  var rest=ENT.filter(function(e){return !e.is_champ;});
-  // shuffle non-champs
-  for(var i=rest.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=rest[i];rest[i]=rest[j];rest[j]=t;}
-  var ordered=(champ?[champ]:[]).concat(rest);           // seed 1 = champ
-  var count=ordered.length, size=pow2(count), R=Math.log2(size);
-  var pos=seedPositions(size);
-  var slots=pos.map(function(s){return s<=count?ordered[s-1].id:null;});
-  var rows=[], id=1;
-  var per=size/2;
-  for(var r=0;r<R;r++){
-    for(var x=0;x<per;x++) rows.push({id:id++,round:r,idx:x,a:"",b:"",is_bye:false,winner:""});
-    per=per/2;
-  }
-  function row(r,x){ return rows.filter(function(m){return m.round===r&&m.idx===x;})[0]; }
-  for(var x=0;x<size/2;x++){ var m=row(0,x); m.a=slots[2*x]||""; m.b=slots[2*x+1]||""; }
-  // propagate byes out of round 1
-  rows.filter(function(m){return m.round===0;}).forEach(function(m){
-    if(m.a&&!m.b){ m.is_bye=true; m.winner="a"; place(m,m.a); }
-    else if(m.b&&!m.a){ m.is_bye=true; m.winner="b"; place(m,m.b); }
-  });
-  function place(m,wid){
-    if(m.round===R-1) return;
-    var nx=row(m.round+1,Math.floor(m.idx/2));
-    if(m.idx%2===0) nx.a=wid; else nx.b=wid;
-  }
-  return rows;
-}
-
-/* ---------- shared UI ---------- */
+/* ---------------- shared UI ---------------- */
 function nav(active){
-  function l(h,t){return '<a href="#'+h+'" class="'+(active===h?'on':'')+'">'+t+'</a>';}
-  return '<div class="modenav">'+l('enter','Enter')+l('bracket','Bracket')+l('archive','Archive')+l('board','Board')+(PIN?l('slot','Slot')+l('timer','Timer')+l('versus','Versus'):'')+'</div>';
+  function link(h,l){return '<a href="#'+h+'" class="'+(active===h?'on':'')+'">'+l+'</a>';}
+  return '<div class="modenav">'+link('submit','Submit')+link('queue','Dashboard')+(PIN?link('overlay','OBS Overlay'):'')+'</div>';
 }
 function pill(){
-  if(B.state==='entries'){
-    if(uploadExpired()) return '<span class="statuspill closed">Entries closed · '+ENT.length+' in</span>';
-    return '<span class="statuspill open">Entries open · '+ENT.length+' in</span>';
-  }
-  if(B.state==='locked')  return '<span class="statuspill live2">Battle live</span>';
-  return '<span class="statuspill gold">Champion crowned</span>';
+  if(!CONFIGURED) return '<span class="statuspill closed">not connected</span>';
+  var cls=State.open?"open":"closed";
+  return '<span class="statuspill '+cls+'">'+(State.open?"Open":"Closed")+' · '+queued().length+' waiting</span>';
 }
-function mast(sub){
-  return '<div class="mast"><div class="brand">PR<span class="z">0</span>CESS_LIVE <span class="z">//</span> BEAT BATTLE'+
-    '<small>G\u2019S AND VIP\u2019S <span class="z">//</span> WEDNESDAYS'+(sub?' \u00b7 '+sub:'')+'</small></div>'+pill()+'</div>';
+function stripView(it,n,kind,acts){
+  var cls=kind==="live"?"strip live":"strip";
+  var style=it.status==="skipped"?' style="opacity:.55"':(kind==="done"?' style="opacity:.7"':'');
+  return '<div class="'+cls+'"'+style+'><div class="num">'+n+'</div><div class="body">'+
+    '<div class="who">'+esc(it.handle)+(it.status==="skipped"?' <span class="skiptag">SKIPPED</span>':'')+'</div>'+
+    '<div class="title">'+esc(it.title)+'</div>'+
+    '<div class="meta">'+(it.genre?'<span class="tag">'+esc(it.genre)+'</span>':'')+
+      '<a href="'+esc(it.link)+'" target="_blank" rel="noopener">open link ↗</a></div>'+
+    (it.note?'<div class="note">'+esc(it.note)+'</div>':'')+
+    (kind==="live"?'<div class="meter"><i></i></div>':'')+
+  '</div>'+(acts?'<div class="acts">'+acts+'</div>':'')+'</div>';
 }
-function roundName(r,R){ if(r===R-1)return "FINAL"; if(r===R-2)return "SEMIS"; return "ROUND "+(r+1); }
-
-/* ---------- ENTER ---------- */
-
-/* ---------- discord export ---------- */
-function discordText(rows, champName, when){
-  var lines=["\uD83E\uDD4A G'S & VIP'S BEAT BATTLE \u2014 "+when];
-  if(champName) lines.push("\uD83D\uDC51 Champion: "+champName);
-  rows.forEach(function(r){
-    lines.push((r.won?"\uD83D\uDC51 ":"")+r.handle+" \u2014 "+r.link);
-  });
-  return lines.join("\n");
-}
-function copyText(t, btn){
-  function ok(){ if(btn){ var o=btn.textContent; btn.textContent="Copied \u2713"; setTimeout(function(){btn.textContent=o;},1500);} }
-  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(ok,function(){ prompt("Copy this:",t); }); }
-  else prompt("Copy this:",t);
+function notConfigured(){
+  app.innerHTML='<div class="wrap"><div class="gate"><div class="g-brand">'+wordmark()+'</div>'+
+  '<p>Not connected yet. Open <b>config.js</b> and paste your Supabase URL and anon key (Settings → API), then reload.</p></div></div>';
 }
 
-function renderEnter(){
-  app.innerHTML='<div class="wrap">'+mast('')+nav('enter')+'<div id="zone"></div>'+
-    '<div class="foot"><span>v1.0</span><span>BEAT BATTLE</span></div></div>';
+/* ---------------- SUBMIT ---------------- */
+function renderSubmit(){
+  if(!CONFIGURED){ notConfigured(); return; }
+  app.innerHTML='<div class="wrap">'+
+    '<div class="mast"><div class="brand">'+wordmark()+'<small>'+esc(BRAND_SUB)+'</small></div><span id="pill"></span></div>'+
+    nav('submit')+'<div id="formzone"></div>'+
+    '<div class="foot"><span>v1.2.0</span><span>'+wordmark()+'</span></div></div>';
   var built=false;
   onState(function(){
-    var p=document.querySelector(".statuspill"); if(p) p.outerHTML=pill();
-    var z=document.getElementById("zone"); if(!z) return;
-    if(B.state==='entries'&&uploadExpired()){ built=false;
-      z.innerHTML='<div class="empty"><b>Upload window closed.</b>Entries are done · the bracket drops any minute. Stay in the stream.</div>';
-      return; }
-    if(B.state!=='entries'){ built=false;
-      z.innerHTML = B.state==='done'
-        ? '<div class="champbox"><div class="lab">CHAMPION</div><div class="bigname">'+esc(B.champ_name||"")+'</div><div class="sub">Bracket\u2019s done. Next battle Wednesday \u2014 defend or dethrone.</div></div>'
-        : '<div class="empty"><b>Entries are locked \u2014 battle\u2019s running.</b>Watch the bracket live, next one opens Wednesday.</div>';
+    var p=document.getElementById("pill"); if(p) p.innerHTML=pill();
+    var fz=document.getElementById("formzone"); if(!fz) return;
+    if(!State.open){ built=false;
+      fz.innerHTML='<div class="empty"><b>The queue is closed right now.</b>G-REX isn\'t taking submissions at the moment. Catch the next feedback stream on PR0CESS_LIVE.</div>';
       return; }
     if(built) return; built=true;
-    z.innerHTML=(deadlineSet()?'<div class="twrap tbanner"><span class="tlab">'+timerLabel()+'</span><span class="tval">--:--</span><span class="tsub">'+(B.timer_label==='cook'?'flip the sample \u2014 upload window comes after':'get it on SoundCloud and entered before zero')+'</span></div>':'')+
-      '<div class="field"><label>Producer handle <span class="req">*</span></label><input id="e-handle" type="text" maxlength="40" placeholder="@yourhandle"></div>'+
-      '<div class="field"><label>SoundCloud link <span class="req">*</span></label><input id="e-link" type="url" placeholder="soundcloud.com/you/your-battle-track"></div>'+
-      '<div class="field"><label>Defending champ? Enter your code</label><input id="e-code" type="password" placeholder="leave blank unless you won last week" autocomplete="off"></div>'+
-      '<button class="btn" id="e-send">Enter the battle</button>'+
-      '<div class="hint" id="e-err"></div>'+
-      '<div class="hint"><b>Rules:</b> SoundCloud links only. One entry per handle. Last week\u2019s champ got a code in DMs \u2014 that code claims the crown seed and the bye.</div>'+
-      (B.champ_name?'<div class="hint">Defending champion: <b class="goldtxt">'+esc(B.champ_name)+'</b>'+(champEntrant()?' \u2014 checked in \u2713':' \u2014 not checked in yet')+'</div>':'');
-    document.getElementById("e-send").onclick=function(){
-      var h=document.getElementById("e-handle").value.trim();
-      var l=document.getElementById("e-link").value.trim();
-      var c=document.getElementById("e-code").value.trim();
-      var err=document.getElementById("e-err");
-      if(!/^https?:\/\//i.test(l) && /soundcloud\./i.test(l)) l="https://"+l;
-      if(!h){ err.innerHTML='<b class="bad">Need your handle.</b>'; return; }
-      if(!/soundcloud\.com\//i.test(l)){ err.innerHTML='<b class="bad">SoundCloud links only for battles.</b>'; return; }
-      var btn=document.getElementById("e-send"); btn.disabled=true; btn.textContent="Entering\u2026";
-      sb.rpc("bb_enter",{p_handle:h,p_link:l,p_code:c||null}).then(function(r){
-        if(r.error) throw r.error;
-        var isChamp=r.data===true;
-        z.innerHTML='<div class="confirm'+(isChamp?' goldc':'')+'"><div class="big">'+(isChamp?"THE CHAMP IS IN.":"You\u2019re in.")+'</div>'+
-          '<div class="sub"><b class="'+(isChamp?'goldtxt':'amber')+'">'+esc(h)+'</b>'+(isChamp?' \u2014 crown seed locked, top bye is yours.':' \u2014 seeded when the host locks the bracket.')+'<br>Stay in the stream. Bracket goes live soon.</div></div>';
-        refresh();
-      }).catch(function(e){
-        btn.disabled=false; btn.textContent="Enter the battle";
-        var m=(e&&e.message)||"";
-        if(/bad champ code/i.test(m)) err.innerHTML='<b class="bad">That champ code isn\u2019t right. Leave it blank to enter as a challenger.</b>';
-        else if(/champ already/i.test(m)) err.innerHTML='<b class="bad">The champ already checked in.</b>';
-        else if(/bb_one_per_handle|duplicate/i.test(m)) err.innerHTML='<b class="bad">That handle\u2019s already entered.</b>';
-        else if(/duplicate track/i.test(m)) err.innerHTML='<b class="bad">That track\u2019s already entered in this battle.</b>';
-        else if(/time up/i.test(m)) err.innerHTML='<b class="bad">Time\u2019s up \u2014 the upload window closed.</b>';
-        else if(/entries closed/i.test(m)) err.innerHTML='<b class="bad">Entries just closed.</b>';
-        else if(/soundcloud/i.test(m)) err.innerHTML='<b class="bad">SoundCloud links only.</b>';
-        else err.innerHTML='<b class="bad">Couldn\u2019t enter \u2014 try again.</b>';
-      });
-    };
+    buildForm(fz);
   });
 }
+function buildForm(fz){
+  var genre="";
+  fz.innerHTML=
+    '<div class="field"><label>Producer / handle <span class="req">*</span></label><input id="f-handle" type="text" maxlength="40" placeholder="@yourhandle" autocomplete="off"></div>'+
+    '<div class="field"><label>Track title <span class="req">*</span></label><input id="f-title" type="text" maxlength="80" placeholder="what\'s it called"></div>'+
+    '<div class="field"><label>Link <span class="req">*</span></label><input id="f-link" type="url" placeholder="SoundCloud or Dropbox link that plays"></div>'+
+    '<div class="field"><label>Genre</label><div class="chips" id="f-genre">'+GENRES.map(function(g){return '<button type="button" class="chip" data-g="'+esc(g)+'">'+esc(g)+'</button>';}).join("")+'</div></div>'+
+    '<div class="field"><label>What do you want feedback on?</label><textarea id="f-note" maxlength="240" placeholder="optional — point him at the part you\'re unsure about"></textarea></div>'+
+    '<button class="btn" id="f-send">Send to queue</button>'+
+    '<div class="hint" id="f-err"></div>'+
+    '<div class="hint"><b>One rule:</b> no YouTube, no Spotify. SoundCloud (private is fine) or Dropbox — anything that plays the raw track. Test your link in an incognito tab: if it plays there, it plays for G-REX. Multiple tracks are cool, just don\'t dump a pile in a row — let the queue breathe. Heavy, weird, unfinished all welcome.</div>';
 
-/* ---------- BRACKET (public) ---------- */
-function bracketHTML(interactive){
-  if(!M.length) return '<div class="empty">'+(B.state==='entries'?'Bracket seeds when entries lock. '+ENT.length+' producers in so far.':'No bracket yet.')+'</div>';
-  var R=Math.max.apply(null,M.map(function(m){return m.round;}))+1;
-  var nextId=B.active_match;
-  if(!nextId){
-    var n=M.filter(function(m){return !m.winner&&m.a&&m.b;}).sort(function(a,b){return a.id-b.id;})[0];
-    if(n) nextId=n.id;
-  }
-  var html='<div class="bscroll"><div class="bracket">';
-  for(var r=0;r<R;r++){
-    var ms=M.filter(function(m){return m.round===r;});
-    html+='<div class="rcol"><div class="rtitle">'+roundName(r,R)+'</div><div class="rmatches">';
-    ms.forEach(function(m){
-      var aC=byId(m.a), bC=byId(m.b);
-      var armed=B.active_match===m.id;
-      var isNext=nextId===m.id&&!m.winner&&!m.is_bye;
-      var hasChamp=(aC&&aC.is_champ)||(bC&&bC.is_champ);
-      html+='<div class="mwrap"><div class="match'+(isNext?' next':'')+(hasChamp?' champ-match':'')+'"'+
-        (interactive&&isOwner()&&!m.is_bye&&!m.winner?' data-arm="'+m.id+'"':'')+'>'+
-        '<div class="m-head"><span class="m-num">M'+m.id+'</span>'+
-        (armed?'<span class="m-next-tag livec">LIVE \u25B8</span>':(isNext?'<span class="m-next-tag">NEXT \u25B8</span>':''))+'</div>'+
-        slot(m,'a',aC)+slot(m,'b',bC)+
-      '</div></div>';
+  fz.querySelectorAll("#f-genre .chip").forEach(function(c){ c.onclick=function(){
+    fz.querySelectorAll("#f-genre .chip").forEach(function(x){x.classList.remove("on");});
+    c.classList.add("on"); genre=c.getAttribute("data-g");
+  };});
+
+  document.getElementById("f-send").onclick=function(){
+    var handle=document.getElementById("f-handle").value.trim();
+    var title=document.getElementById("f-title").value.trim();
+    var link=document.getElementById("f-link").value.trim();
+    var note=document.getElementById("f-note").value.trim();
+    var err=document.getElementById("f-err");
+    if(!/^https?:\/\//i.test(link) && /^(www\.|soundcloud\.|dropbox\.)/i.test(link)) link="https://"+link;
+    if(!handle||!title){ err.innerHTML='<b class="bad">Need a handle and a title.</b>'; return; }
+    if(!/^https?:\/\//i.test(link)){ err.innerHTML='<b class="bad">Paste the full link — it should start with http(s)://</b>'; return; }
+    if(/youtube\.com|youtu\.be|spotify\.com/i.test(link)){ err.innerHTML='<b class="bad">No YouTube or Spotify — drop a SoundCloud or Dropbox link.</b>'; return; }
+    var btn=document.getElementById("f-send"); btn.disabled=true; btn.textContent="Sending…";
+
+    sb.from("queue").insert({handle:handle,title:title,link:link,note:note||null,genre:genre||null})
+    .then(function(r){
+      if(r.error) throw r.error;
+      return sb.from("queue").select("id",{count:"exact",head:true}).eq("status","queued");
+    }).then(function(r){
+      var pos=r.count||1;
+      fz.innerHTML='<div class="confirm"><div class="big">You\'re in.</div><div class="pos">#'+pos+'</div>'+
+        '<div class="sub"><b class="amber">'+esc(handle)+'</b> — "'+esc(title)+'"<br>Position in queue. Keep the stream open — G-REX pulls from the top.</div>'+
+        '<button class="btn ghost" style="margin-top:18px" onclick="location.reload()">Done</button></div>';
+    }).catch(function(e){
+      btn.disabled=false; btn.textContent="Send to queue";
+      var m=(e&&e.message)||"";
+      if(/row-level|policy|violates/i.test(m)) err.innerHTML='<b class="bad">Submissions just closed.</b>';
+      else err.innerHTML='<b class="bad">Couldn\'t send — try again in a second.</b>';
     });
-    html+='</div></div>';
-  }
-  html+='<div class="rcol champ-col"><div class="rtitle">Champion</div><div class="rmatches"><div class="mwrap">'+
-    '<div class="champ-card"><div class="clabel">Champion</div><div class="ctrophy">\u265B</div>'+
-    '<div class="cname">'+(B.state==='done'&&B.champ_name?esc(B.champ_name):'\u2014')+'</div></div>'+
-  '</div></div></div>';
-  html+='</div></div>';
-  return html;
-  function slot(m,s,e){
-    var win=m.winner===s, lose=m.winner&&m.winner!==s&&(s==='a'?m.a:m.b);
-    var cls='slot'+(win?' win':'')+(lose?' lose':'')+(!e&&m.is_bye?' bye':'')+(!e&&!m.is_bye?' empty':'')+(e&&e.is_champ?' chs':'');
-    var nm=e?esc(e.handle):(m.is_bye?'\u2014':'TBD');
-    var tail='';
-    if(m.is_bye&&!e){ var other=byId(s==='a'?m.b:m.a); tail='<span class="bye-tag'+((other&&other.is_champ)?' cb':'')+'">BYE</span>'; }
-    else if(e&&!m.is_bye) tail='<span class="bv">'+(s==='a'?m.votes_a:m.votes_b)+'</span>';
-    return '<div class="'+cls+'"><span class="dot"></span><span class="sname">'+nm+(e&&e.is_champ?' \u265B':'')+'</span>'+tail+'</div>';
-  }
-}
-function renderBracket(){
-  app.innerHTML='<div class="wrap wide">'+mast('LIVE BRACKET')+nav('bracket')+'<div id="zone"></div>'+
-    '<div class="foot"><span>v1.0</span><span>BEAT BATTLE</span></div></div>';
-  onState(function(){
-    var p=document.querySelector(".statuspill"); if(p) p.outerHTML=pill();
-    var z=document.getElementById("zone"); if(z) z.innerHTML=bracketHTML(false);
-  });
+  };
 }
 
-/* ---------- BOARD (host + mods) ---------- */
-function renderBoard(){
-  if(!PIN){ renderGate(); return; }
-  app.innerHTML='<div class="wrap wide">'+mast('BOARD'+(isOwner()?'':' \u00b7 MOD'))+nav('board')+
-    '<div class="dashbar" id="topbar"></div>'+
-    '<div id="champrow" class="cmdref" style="display:none"></div>'+
-    '<div id="zone"></div>'+
-    '<div class="foot"><span>v1.0</span><span>'+(isOwner()?'HOST':'MOD')+'</span></div></div>';
-  if(isOwner()){
-    var el=document.getElementById("champrow");
-    if(el){
-      el.style.display="";
-      var hasCode = B.champ_code_set===true; // set via refresh below
-      sb.from("bb_battle").select("champ_code").eq("id",1).single().then(function(r){
-        var isSet = !!(r.data && r.data.champ_code);
-        el.innerHTML='Champ code: <b class="'+(isSet?'goldtxt':'bad')+'">'+(isSet?'SET \u2713':'NOT SET')+'</b>'+
-          ' \u00b7 <input id="cc-in" type="password" placeholder="type new code" style="width:150px;padding:6px 8px;font-size:12px">'+
-          ' <button class="miniact" id="cc-save">Set</button>'+
-          '<span class="hint" style="margin-left:10px">code is never shown \u2014 DM the champ whatever you type here</span>';
-        document.getElementById("cc-save").onclick=function(){
-          var v=document.getElementById("cc-in").value.trim();
-          if(!v){ alert("Type a code first."); return; }
-          admin("set_champ_code",{p_text:v}).then(function(){ document.getElementById("cc-in").value=""; renderBoard(); });
-        };
-      });
-    }
-  }
+/* ---------------- DASHBOARD ---------------- */
+function renderDashboard(){
+  if(!CONFIGURED){ notConfigured(); return; }
+  if(!PIN){ renderPinGate(); return; }
+  app.innerHTML='<div class="wrap">'+
+    '<div class="mast"><div class="brand">'+wordmark()+'<small>DASHBOARD'+(isOwner()?'':' &middot; MOD')+'</small></div><span id="pill"></span></div>'+
+    nav('queue')+
+    '<div class="dashbar"><button class="toggle" id="d-toggle"></button><div class="spacer"></div>'+
+    (isOwner()?'<button class="miniact" id="d-clear">Clear reviewed</button>':'')+
+    '<button class="miniact danger" id="d-lock">Lock</button></div>'+
+    '<div id="d-now"></div>'+
+    '<div class="seclabel">Up next <span class="ct" id="d-upct"></span></div>'+
+    '<div id="d-queue" class="rack"></div>'+
+    '<div class="seclabel">Reviewed</div>'+
+    '<div id="d-done" class="rack"></div>'+
+    '<div class="foot"><span>v1.2.0</span><span>LIVE</span></div></div>';
+  var dc=document.getElementById("d-clear"); if(dc) dc.onclick=function(){ admin("clear_reviewed"); };
+  document.getElementById("d-lock").onclick=function(){ PIN=""; ROLE=""; localStorage.removeItem("pq_pin"); localStorage.removeItem("pq_role"); render(); };
   onState(function(){
-    var p=document.querySelector(".statuspill"); if(p) p.outerHTML=pill();
-    var tb=document.getElementById("topbar"); if(!tb) return;
-    var z=document.getElementById("zone");
-    if(B.state==='entries'){
-      tb.innerHTML=(isOwner()?'<button class="btn slim" id="lockit"'+(ENT.length<2?' disabled':'')+'>Lock bracket & seed ('+ENT.length+')</button>':'<span class="hint">Entries open \u2014 '+ENT.length+' in. Host locks when ready.</span>')+
-        (deadlineSet()?'<span class="twrap tmini">\u23F1 '+timerLabel()+' <span class="tval">--:--</span></span>':'')+
-        '<span class="tgrp">COOK <button class="miniact" data-t="cook:15">+15</button><button class="miniact" data-t="cook:30">+30</button><button class="miniact" data-t="cook:60">+60</button></span>'+
-        '<span class="tgrp">UPLOAD <button class="miniact" data-t="upload:5">+5</button><button class="miniact" data-t="upload:10">+10</button></span>'+
-        (deadlineSet()?'<button class="miniact danger" id="tclr">Clear</button>':'')+
-        '<div class="spacer"></div><button class="miniact" id="copylist">Copy list</button><button class="miniact danger" id="lockout">Lock</button>';
-      tb.querySelectorAll("[data-t]").forEach(function(b){
-        b.onclick=function(){
-          var p=b.getAttribute("data-t").split(":");
-          admin("deadline",{p_delta:parseInt(p[1],10),p_text:p[0]});
-        };
-      });
-      var tclr=document.getElementById("tclr");
-      if(tclr) tclr.onclick=function(){ admin("deadline",{p_delta:null}); };
-      z.innerHTML='<div class="seclabel">Entrants <span class="ct">'+ENT.length+'</span></div><div class="rack">'+
-        (ENT.length?ENT.map(function(e){
-          return '<div class="strip'+(e.is_champ?' goldstrip':'')+'"><div class="num">'+(e.is_champ?'\u265b':'\u00b7')+'</div><div class="body">'+
-            '<div class="who">'+esc(e.handle)+(e.is_champ?' <span class="goldtxt" style="font-size:10px;letter-spacing:.1em">CHAMP</span>':'')+'</div>'+
-            '<div class="meta">'+(linkOf(e.id)?'<a href="'+esc(linkOf(e.id))+'" target="_blank" rel="noopener">open track \u2197</a>':'<span class="hint">unlocking\u2026</span>')+'</div></div>'+
-            '<div class="acts"><button class="kill" data-rm="'+e.id+'">\u2715</button></div></div>';
-        }).join(''):'<div class="empty">Nobody in yet \u2014 drop the entry link in chat.</div>')+'</div>';
-      var lk=document.getElementById("lockit");
-      if(lk) lk.onclick=function(){
-        if(!confirm("Lock entries and seed the bracket for "+ENT.length+" producers?")) return;
-        admin("lock",{p_matches:buildBracket()});
-      };
-    } else {
-      tb.innerHTML=(isOwner()?'<button class="miniact" id="undoall" title="undo last decided match">Undo last</button><button class="miniact" id="unlockit">Unlock entries</button><button class="miniact danger" id="resetit">New battle (reset)</button>':'<span class="hint">Tally votes with + / \u2212. Host declares winners.</span>')+
-        '<div class="spacer"></div><button class="miniact" id="copylist">Copy list</button><button class="miniact danger" id="lockout">Lock</button>';
-      z.innerHTML='<div id="fight"></div><div class="seclabel">Bracket</div>'+bracketHTML(true);
-      renderFight();
-      var ul=document.getElementById("unlockit");
-      if(ul) ul.onclick=function(){
-        if(!confirm("Reopen entries? Everyone stays entered \u2014 this bracket and its votes get wiped when you lock again (fresh random pairings).")) return;
-        admin("open").then(function(){ admin("arm",{p_id:null}); });
-      };
-      var rs=document.getElementById("resetit");
-      if(rs) rs.onclick=function(){ if(confirm("Wipe this battle and open entries for next week? Champ code carries over.")) admin("reset"); };
-      var ud=document.getElementById("undoall");
-      if(ud) ud.onclick=function(){
-        var dec=M.filter(function(m){return m.winner&&!m.is_bye;}).sort(function(a,b){return b.id-a.id;})[0];
-        if(!dec){ alert("Nothing to undo."); return; }
-        admin("undo_winner",{p_id:dec.id});
-      };
-      document.querySelectorAll("[data-arm]").forEach(function(el){
-        el.onclick=function(){ admin("arm",{p_id:parseInt(el.getAttribute("data-arm"),10)}); };
-      });
-    }
-    document.querySelectorAll("[data-rm]").forEach(function(b){ b.onclick=function(){ admin("remove_entrant",{p_uuid:b.getAttribute("data-rm")}); }; });
-    var lo=document.getElementById("lockout");
-    if(lo) lo.onclick=function(){ PIN=""; ROLE=""; localStorage.removeItem("pq_pin"); localStorage.removeItem("pq_role"); render(); };
-    var cl=document.getElementById("copylist");
-    if(cl) cl.onclick=function(){
-      var rows=ENT.map(function(e){ return {handle:e.handle, link:linkOf(e.id)||"(link locked)", won:(B.state==='done'&&B.champ_name===e.handle)}; });
-      copyText(discordText(rows, B.state==='done'?B.champ_name:null, new Date().toLocaleDateString()), cl);
-    };
+    var p=document.getElementById("pill"); if(p) p.innerHTML=pill();
+    var dt=document.getElementById("d-toggle");
+    if(dt){ dt.innerHTML='Submissions: <b class="'+(State.open?'amber':'bad')+'">'+(State.open?'OPEN':'CLOSED')+'</b>'+(isOwner()?(' · tap to '+(State.open?'close':'open')):'');
+      if(isOwner()) dt.onclick=function(){ admin(State.open?"close":"open"); }; }
+    var c=current(), list=queued(), done=reviewed();
+    var upct=document.getElementById("d-upct"); if(upct) upct.textContent=list.length;
+    var now=document.getElementById("d-now"); if(!now) return;
+    now.innerHTML = c ? stripView(c,"▸","live",(isOwner()?'<button class="go" data-a="done" data-id="'+c.id+'">Done</button>':''))
+      : '<div class="empty"><b>Nothing armed.</b>Hit Review on a strip below to put it on the overlay.</div>';
+    document.getElementById("d-queue").innerHTML = list.length ?
+      list.map(function(it,i){return stripView(it,i+1,"plain",
+        (isOwner()?'<button class="go" data-a="review" data-id="'+it.id+'">Review</button>':'')+
+        '<button data-a="bump" data-id="'+it.id+'">Bump ↑</button>'+
+        '<button data-a="skip" data-id="'+it.id+'">Skip</button>'+
+        '<button class="kill" data-a="delete" data-id="'+it.id+'">✕</button>');}).join("")
+      : '<div class="empty">'+(State.open?"Queue's empty — waiting on submissions.":"Closed and empty.")+'</div>';
+    document.getElementById("d-done").innerHTML = done.length ?
+      done.slice().reverse().map(function(it){return stripView(it,"·","done",
+        '<button data-a="requeue" data-id="'+it.id+'">Re-queue</button>'+
+        '<button class="kill" data-a="delete" data-id="'+it.id+'">✕</button>');}).join("")
+      : '<div class="empty" style="padding:18px">Nothing reviewed yet this session.</div>';
+    app.querySelectorAll("[data-a]").forEach(function(b){ b.onclick=function(){ admin(b.getAttribute("data-a"), b.getAttribute("data-id")); }; });
   });
-  function renderFight(){
-    var f=document.getElementById("fight"); if(!f) return;
-    var m=M.filter(function(x){return x.id===B.active_match;})[0];
-    if(!m){ f.innerHTML='<div class="empty"><b>No match armed.</b>'+(isOwner()?'Tap a match below to put it on the overlay.':'Host arms matches.')+'</div>'; return; }
-    var a=byId(m.a), b=byId(m.b);
-    var R=Math.max.apply(null,M.map(function(x){return x.round;}))+1;
-    f.innerHTML='<div class="fstage">'+fSide(m,'a',a)+'<div class="fvs">VS</div>'+fSide(m,'b',b)+'</div>';
-    function fSide(m,s,e){
-      var v=s==='a'?m.votes_a:m.votes_b;
-      var won=m.winner===s;
-      return '<div class="fside'+(won?' won':'')+(e&&e.is_champ?' champ-side':'')+'">'+
-        '<div class="fcorner">'+(e&&e.is_champ?'\u265B CHAMP':roundName(m.round,R))+'</div>'+
-        '<div class="fname">'+(e?esc(e.handle):'\u2014')+'</div>'+
-        (e&&linkOf(e.id)?'<a class="ftrack" href="'+esc(linkOf(e.id))+'" target="_blank" rel="noopener">play track \u2197</a>':'')+
-        '<div class="fvotes">'+v+'</div>'+
-        '<div class="frow">'+
-          '<button class="vb" data-v="'+m.id+'" data-s="'+s+'" data-d="-1">\u2212</button>'+
-          '<button class="vb" data-v="'+m.id+'" data-s="'+s+'" data-d="1">+</button>'+
-          (isOwner()&&!m.winner?'<button class="wb" data-w="'+m.id+'" data-s="'+s+'">WINNER</button>':'')+
-        '</div></div>';
-    }
-    f.querySelectorAll("[data-v]").forEach(function(b){ b.onclick=function(){ admin("vote",{p_id:parseInt(b.getAttribute("data-v"),10),p_side:b.getAttribute("data-s"),p_delta:parseInt(b.getAttribute("data-d"),10)}); }; });
-    f.querySelectorAll("[data-w]").forEach(function(b){ b.onclick=function(){ admin("set_winner",{p_id:parseInt(b.getAttribute("data-w"),10),p_side:b.getAttribute("data-s")}); }; });
-  }
 }
-function renderGate(){
-  app.innerHTML='<div class="wrap">'+mast('BOARD')+nav('board')+'<div class="gate"><div class="g-brand">BEAT BATTLE <span class="z">//</span> BOARD</div>'+
-    '<p>Same PINs as the queue \u2014 crew runs it, mods tally votes.</p>'+
+function renderPinGate(){
+  app.innerHTML='<div class="wrap"><div class="gate"><div class="g-brand">'+wordmark()+'</div>'+
+    '<p>Crew or mod PIN gets you in. Crew runs the session; mods keep the queue clean.</p>'+
     '<input id="pin" type="password" placeholder="PIN" style="text-align:center;max-width:260px;margin:0 auto;display:block">'+
     '<button class="btn" id="unlock" style="max-width:260px;margin:14px auto 0">Unlock</button>'+
     '<div class="err" id="g-err"></div></div></div>';
   function go(){
     var v=document.getElementById("pin").value.trim();
     getRole(v).then(function(role){
-      if(role==="owner"||role==="mod"){PIN=v;ROLE=role;localStorage.setItem("pq_pin",v);localStorage.setItem("pq_role",role);loadLinks();render();}
+      if(role==="owner"||role==="mod"){ PIN=v; ROLE=role; localStorage.setItem("pq_pin",v); localStorage.setItem("pq_role",role); render(); }
       else document.getElementById("g-err").textContent="Wrong PIN.";
     });
   }
   document.getElementById("unlock").onclick=go;
-  document.getElementById("pin").onkeydown=function(e){if(e.key==="Enter")go();};
+  document.getElementById("pin").onkeydown=function(e){ if(e.key==="Enter") go(); };
 }
 
-/* ---------- OVERLAY ---------- */
+/* ---------------- OVERLAY ---------------- */
 function renderOverlay(){
+  if(!CONFIGURED){ notConfigured(); return; }
   document.body.classList.add("overlay");
   app.innerHTML='<div class="ovl" id="ovl"></div>';
   onState(function(){
-    var o=document.getElementById("ovl"); if(!o) return;
-    if(B.state==='done'&&B.champ_name){
-      o.innerHTML='<div class="oround goldtxt">Champion</div>'+
-        '<div class="ostage"><div class="ofighter"><div class="oname goldbig">'+esc(B.champ_name)+' \u265B</div></div></div>'; return;
-    }
-    var m=M.filter(function(x){return x.id===B.active_match;})[0];
-    if(!m){
-      if(B.state==='entries'&&deadlineSet()){
-        o.innerHTML='<div class="oround">'+timerLabel()+'</div>'+
-          '<div class="twrap"><div class="oname tval otimer">--:--</div></div>'+
-          '<div class="osub">'+ENT.length+' PRODUCERS IN</div>'; return;
+    var c=current(), list=queued(), next=list[0], o=document.getElementById("ovl"); if(!o) return;
+    if(!c){
+      if(!State.open){
+        o.innerHTML='<div class="lab">'+BRAND+' // '+BRAND_TAIL+'</div>'+
+          '<div class="now closednow">QUEUE CLOSED</div>'+
+          (list.length?'<div class="next">'+list.length+' still waiting</div>':''); return;
       }
-      o.innerHTML='<div class="oround">PR0CESS_LIVE <span style="color:var(--hot)">//</span> BEAT BATTLE</div>'+
-        '<div class="osub">G\u2019S AND VIP\u2019S // WEDNESDAYS</div>'+
-        '<div class="ostage"><div class="ofighter"><div class="oname">'+(B.state==='entries'?(ENT.length+' PRODUCERS IN'):'BRACKET LIVE')+'</div></div></div>'; return;
+      o.innerHTML='<div class="lab">'+BRAND+' // '+BRAND_TAIL+'</div>'+
+        '<div class="now">'+(list.length?(list.length+" in the queue"):"queue is open")+'</div>'+
+        (next?'<div class="next">UP NEXT &nbsp; <b>'+esc(next.handle)+'</b></div>':''); return;
     }
-    var a=byId(m.a), b=byId(m.b);
-    var R=Math.max.apply(null,M.map(function(x){return x.round;}))+1;
-    o.innerHTML='<div class="oround">'+roundName(m.round,R)+'</div>'+
-      '<div class="ostage">'+oside(a,m.votes_a,m.winner==='a')+
-      '<div class="ovs2">VS</div>'+oside(b,m.votes_b,m.winner==='b')+'</div>';
-    function oside(e,v,won){
-      return '<div class="ofighter'+(won?' won':'')+(e&&e.is_champ?' champ-side':'')+'">'+
-        '<div class="oname">'+(e?esc(e.handle):'\u2014')+(e&&e.is_champ?' \u265B':'')+'</div>'+
-        '<div class="otally">'+v+'</div></div>';
-    }
+    o.innerHTML='<div class="lab">Now reviewing</div>'+
+      '<div class="now"><span class="h">'+esc(c.handle)+'</span></div>'+
+      '<div class="trk">"'+esc(c.title)+'"'+(c.genre?(' · '+esc(c.genre)):'')+'</div>'+
+      '<div class="mtr"><i></i></div>'+
+      (next?'<div class="next">UP NEXT &nbsp; <b>'+esc(next.handle)+'</b> &nbsp;·&nbsp; '+list.length+' waiting</div>'
+           :'<div class="next">'+list.length+' waiting</div>');
   });
 }
 
-
-/* ---------- ARCHIVE ---------- */
-function renderArchive(){
-  app.innerHTML='<div class="wrap wide">'+mast('ARCHIVE')+nav('archive')+
-    '<div id="zone"><div class="empty">Loading past battles\u2026</div></div>'+
-    '<div class="foot"><span>v1.0</span><span>BEAT BATTLE</span></div></div>';
-  sb.from("bb_archive").select("*").order("battle_ts",{ascending:false}).order("won",{ascending:false}).order("handle")
-  .then(function(r){
-    var z=document.getElementById("zone"); if(!z) return;
-    if(r.error||!r.data||!r.data.length){
-      z.innerHTML='<div class="empty"><b>No past battles yet.</b>Every battle archives itself automatically when the host resets for the next week.</div>'; return;
-    }
-    var groups={}; var order=[];
-    r.data.forEach(function(row){
-      var k=row.battle_ts;
-      if(!groups[k]){groups[k]=[];order.push(k);}
-      groups[k].push(row);
-    });
-    var html='';
-    order.forEach(function(k,gi){
-      var rows=groups[k];
-      var d=new Date(k);
-      var when=d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});
-      var champ=rows.filter(function(x){return x.won;})[0];
-      html+='<div class="seclabel">'+when+(champ?' \u00b7 <span class="goldtxt">\u265B '+esc(champ.handle)+'</span>':'')+
-        '<button class="miniact" data-cp="'+gi+'" style="margin-left:auto">Copy for Discord</button>'+
-        (isOwner()?'<button class="miniact danger" data-del="'+gi+'">\u2715</button>':'')+'</div>'+
-        '<div class="rack" style="margin-bottom:20px">'+
-        rows.map(function(x){
-          return '<div class="strip'+(x.won?' goldstrip':'')+'"><div class="num">'+(x.won?'\u265B':(x.was_champ?'\u265B':'\u00b7'))+'</div><div class="body">'+
-            '<div class="who'+(x.won?' goldtxt':'')+'">'+esc(x.handle)+(x.won?' <span class="goldtxt" style="font-size:10px;letter-spacing:.1em">WON</span>':(x.was_champ?' <span style="font-size:10px;letter-spacing:.1em;color:var(--dim)">DEFENDED</span>':''))+'</div>'+
-            '<div class="meta"><a href="'+esc(x.link)+'" target="_blank" rel="noopener">open track \u2197</a></div>'+
-          '</div></div>';
-        }).join('')+'</div>';
-    });
-    z.innerHTML=html;
-    z.querySelectorAll("[data-del]").forEach(function(b){
-      b.onclick=function(){
-        var k=order[parseInt(b.getAttribute("data-del"),10)];
-        var when=new Date(k).toLocaleDateString();
-        if(!confirm("Delete the archived battle from "+when+"? This is permanent.")) return;
-        admin("del_archive",{p_text:k}).then(function(){ renderArchive(); });
-      };
-    });
-    z.querySelectorAll("[data-cp]").forEach(function(b){
-      b.onclick=function(){
-        var k=order[parseInt(b.getAttribute("data-cp"),10)];
-        var rows=groups[k].map(function(x){return {handle:x.handle,link:x.link,won:x.won};});
-        var champ=groups[k].filter(function(x){return x.won;})[0];
-        var when=new Date(k).toLocaleDateString();
-        copyText(discordText(rows, champ?champ.handle:null, when), b);
-      };
-    });
-  });
-}
-
-
-/* ---------- TIMER OVERLAY (OBS source #1) ---------- */
-function renderTimerOverlay(){
-  document.body.classList.add("overlay");
-  app.innerHTML='<div class="ovl ovlcenter" id="ovl"></div>';
-  onState(function(){
-    var o=document.getElementById("ovl"); if(!o) return;
-    if(B.state!=='entries'||!deadlineSet()){ o.innerHTML=''; return; }
-    o.innerHTML='<div class="oround">'+timerLabel()+'</div>'+
-      '<div class="twrap"><div class="oname tval otimer">--:--</div></div>';
-  });
-}
-
-/* ---------- VERSUS OVERLAY (OBS source #2) ---------- */
-function renderVersus(){
-  document.body.classList.add("overlay");
-  app.innerHTML='<div class="ovl ovlcenter" id="ovl"></div>';
-  onState(function(){
-    var o=document.getElementById("ovl"); if(!o) return;
-    if(B.state==='done'&&B.champ_name){
-      o.innerHTML='<div class="oround goldtxt">Champion</div>'+
-        '<div class="ostage vscenter"><div class="ofighter"><div class="oname goldbig">'+esc(B.champ_name)+' \u265B</div></div></div>'; return;
-    }
-    var m=B.state==='locked'?M.filter(function(x){return x.id===B.active_match;})[0]:null;
-    if(!m){ o.innerHTML=''; return; }
-    var a=byId(m.a), b=byId(m.b);
-    var R=Math.max.apply(null,M.map(function(x){return x.round;}))+1;
-    o.innerHTML='<div class="oround">'+roundName(m.round,R)+'</div>'+
-      '<div class="ostage vscenter">'+vSide(a,m.votes_a,m.winner==='a')+
-      '<div class="ovs2">VS</div>'+vSide(b,m.votes_b,m.winner==='b')+'</div>';
-    function vSide(e,v,won){
-      return '<div class="ofighter'+(won?' won':'')+(e&&e.is_champ?' champ-side':'')+'">'+
-        '<div class="oname">'+(e?esc(e.handle):'\u2014')+(e&&e.is_champ?' \u265B':'')+'</div>'+
-        '<div class="otally">'+v+'</div></div>';
-    }
-  });
-}
-
-
-/* ---------- SLOT MACHINE (PIN-gated, standalone) ---------- */
-var SLOT_PRIZES=[];
-var slotSpinning=false;
-function loadSlotPrizes(cb){
-  sb.from("bb_slot").select("prizes").eq("id",1).single().then(function(r){
-    if(!r.error&&r.data&&Array.isArray(r.data.prizes)) SLOT_PRIZES=r.data.prizes;
-    if(cb) cb();
-  });
-}
-function renderSlot(){
-  if(!PIN){ renderGate(); return; }
-  app.innerHTML='<div class="wrap">'+mast('SLOT')+nav('slot')+
-    '<div id="slotzone"><div class="empty">Loading prizes\u2026</div></div>'+
-    '<div class="foot"><span>v1.0</span><span>'+(isOwner()?'HOST':'MOD')+'</span></div></div>';
-  loadSlotPrizes(function(){ paintSlot(); });
-}
-function paintSlot(){
-  var z=document.getElementById("slotzone"); if(!z) return;
-  if(!SLOT_PRIZES.length){
-    z.innerHTML='<div class="empty"><b>No prizes yet.</b>Add some below to start spinning.</div>'+slotEditor();
-    wireEditor(); return;
-  }
-  z.innerHTML=
-    '<div class="slotbox">'+
-      '<div class="slotwin"><div class="slotreel" id="reel"><div class="slotcell result">'+esc(SLOT_PRIZES[0])+'</div></div><div class="slotline"></div></div>'+
-      '<button class="btn slotspin" id="spinbtn">SPIN</button>'+
-      '<div class="slotout" id="slotout"></div>'+
-    '</div>'+
-    slotEditor();
-  document.getElementById("spinbtn").onclick=spinSlot;
-  wireEditor();
-}
-function spinSlot(){
-  if(slotSpinning||!SLOT_PRIZES.length) return;
-  slotSpinning=true;
-  var out=document.getElementById("slotout"); out.textContent="";
-  var reel=document.getElementById("reel");
-  var spinbtn=document.getElementById("spinbtn"); spinbtn.disabled=true;
-  var winner=Math.floor(Math.random()*SLOT_PRIZES.length);
-  // build a long strip that ends on the winner
-  var strip=[], loops=12;
-  for(var i=0;i<loops;i++){ for(var j=0;j<SLOT_PRIZES.length;j++) strip.push(SLOT_PRIZES[j]); }
-  for(var k=0;k<=winner;k++) strip.push(SLOT_PRIZES[k]);
-  reel.innerHTML=strip.map(function(p,idx){return '<div class="slotcell'+(idx===strip.length-1?' result':'')+'">'+esc(p)+'</div>';}).join('');
-  var cellH=64, total=(strip.length-1)*cellH;
-  reel.style.transition="none"; reel.style.transform="translateY(0)";
-  reel.offsetHeight; // reflow
-  reel.style.transition="transform 3.6s cubic-bezier(.12,.75,.16,1)";
-  reel.style.transform="translateY(-"+total+"px)";
-  setTimeout(function(){
-    slotSpinning=false; spinbtn.disabled=false;
-    out.innerHTML='<span class="slotwon">\uD83C\uDFB0 '+esc(SLOT_PRIZES[winner])+'</span>';
-  },3700);
-}
-function slotEditor(){
-  return '<div class="slotedit"><div class="seclabel">Prizes <span class="ct">'+SLOT_PRIZES.length+'</span></div>'+
-    '<div class="prizerack" id="prizerack">'+
-      SLOT_PRIZES.map(function(p,i){
-        return '<div class="prizerow"><span class="pnum">'+(i+1)+'</span>'+
-          '<input class="pin-name" data-i="'+i+'" value="'+esc(p).replace(/"/g,"&quot;")+'">'+
-          '<button class="miniact" data-up="'+i+'">\u2191</button>'+
-          '<button class="miniact" data-dn="'+i+'">\u2193</button>'+
-          '<button class="kill" data-del="'+i+'">\u2715</button></div>';
-      }).join('')+
-    '</div>'+
-    '<div class="prizeadd"><input id="newprize" placeholder="new prize\u2026" maxlength="60"><button class="miniact" id="addprize">Add</button></div>'+
-    '<button class="btn slim" id="saveprizes">Save prizes</button>'+
-    '<span class="hint" id="savemsg" style="margin-left:10px"></span></div>';
-}
-function wireEditor(){
-  var rack=document.getElementById("prizerack"); if(!rack) return;
-  function commit(newList){ SLOT_PRIZES=newList; paintSlot(); }
-  rack.querySelectorAll("[data-del]").forEach(function(b){ b.onclick=function(){ var i=+b.getAttribute("data-del"); commit(SLOT_PRIZES.filter(function(_,x){return x!==i;})); }; });
-  rack.querySelectorAll("[data-up]").forEach(function(b){ b.onclick=function(){ var i=+b.getAttribute("data-up"); if(i<=0)return; var a=SLOT_PRIZES.slice(); var t=a[i-1];a[i-1]=a[i];a[i]=t; commit(a); }; });
-  rack.querySelectorAll("[data-dn]").forEach(function(b){ b.onclick=function(){ var i=+b.getAttribute("data-dn"); if(i>=SLOT_PRIZES.length-1)return; var a=SLOT_PRIZES.slice(); var t=a[i+1];a[i+1]=a[i];a[i]=t; commit(a); }; });
-  rack.querySelectorAll(".pin-name").forEach(function(inp){ inp.onchange=function(){ var i=+inp.getAttribute("data-i"); var a=SLOT_PRIZES.slice(); a[i]=inp.value.trim(); SLOT_PRIZES=a; }; });
-  var add=document.getElementById("addprize"), np=document.getElementById("newprize");
-  if(add) add.onclick=function(){ var v=np.value.trim(); if(!v)return; SLOT_PRIZES=SLOT_PRIZES.concat([v]); paintSlot(); };
-  if(np) np.onkeydown=function(e){ if(e.key==="Enter"&&add) add.click(); };
-  var save=document.getElementById("saveprizes");
-  if(save) save.onclick=function(){
-    var clean=SLOT_PRIZES.map(function(p){return (p||"").trim();}).filter(Boolean);
-    sb.rpc("bb_slot_save",{p_pin:PIN,p_prizes:clean}).then(function(r){
-      var m=document.getElementById("savemsg");
-      if(r.error){ if(m){m.innerHTML='<b class="bad">Save failed.</b>';} }
-      else { SLOT_PRIZES=clean; if(m){m.textContent="Saved \u2713"; setTimeout(function(){var mm=document.getElementById("savemsg"); if(mm)mm.textContent="";},1500);} }
-    });
-  };
-}
-
-/* ---------- mount ---------- */
+/* ---------------- mount ---------------- */
 function render(){
   document.body.classList.remove("overlay");
   listeners=[];
   var r=route();
-  if(r==="bracket") renderBracket();
-  else if(r==="archive") renderArchive();
-  else if(r==="board") renderBoard();
-  else if(r==="timer") renderTimerOverlay();
-  else if(r==="versus") renderVersus();
-  else if(r==="slot") renderSlot();
+  if(r==="queue") renderDashboard();
   else if(r==="overlay") renderOverlay();
-  else renderEnter();
+  else renderSubmit();
   emit();
 }
 window.addEventListener("hashchange",render);
 render();
 startLive();
+
 })();
 
 </script>
